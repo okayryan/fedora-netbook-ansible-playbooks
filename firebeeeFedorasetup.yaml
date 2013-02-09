@@ -1,0 +1,24 @@
+---
+- hosts: all
+  connection: local
+  user: ryan
+  sudo: yes
+  tasks:
+  - name: install calibre
+    action: yum pkg=calibre state=latest
+  - name: install facter
+    action: yum pkg=facter state=latest
+  - name: install git
+    action: yum pkg=git state=latest
+  - name: install pypy
+    action: yum pkg=pypy state=latest
+  - name: install rdesktop
+    action: yum pkg=rdesktop state=latest
+  - name: install screen
+    action: yum pkg=screen state=latest
+  - name: remove bluetooth daemon
+    action: yum pkg=bluez state=removed
+  - name: remove iscsid daemon
+    action: yum pkg=iscsi-initiator-utils state=removed
+  - name: remove sendmail daemon
+    action: yum pkg=sendmail state=removed
