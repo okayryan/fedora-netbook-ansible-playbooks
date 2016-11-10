@@ -1,0 +1,7 @@
+- hosts:
+       - localhost
+  become: true
+  become_user: root
+  tasks:
+       - action: dnf pkg=mono-core state=latest
+       - action: dnf pkg=monodevelop state=latest
